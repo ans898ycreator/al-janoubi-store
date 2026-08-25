@@ -37,5 +37,8 @@ def yalla_ludo_vip():
 def royal_insurance():
     return render_template('yalla_ludo_royal.html')
 
+import os
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
