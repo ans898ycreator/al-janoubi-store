@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متجر الجنوبي - خدمات يلا لودو الرقمية</title>
+    <!-- استدعاء أيقونات FontAwesome للأيقونات الجانبية -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: Tahoma, sans-serif;
@@ -90,6 +92,39 @@
             font-size: 12px;
             color: #888;
         }
+
+        /* تنسيق الأيقونات الجانبية العائمة (خدمات العملاء وطلباتي) */
+        .floating-icons {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .float-btn:hover {
+            transform: scale(1.1);
+        }
+        .float-whatsapp {
+            background-color: #25d366;
+        }
+        .float-orders {
+            background-color: #ff9800; /* لون برز للطلبات */
+        }
     </style>
 </head>
 <body>
@@ -98,7 +133,7 @@
         <h1>🌟 متجر الجنوبي</h1>
         <p class="subtitle">الوجهة الأفضل لخدمات وشحن يلا لودو وتداول الحسابات</p>
 
-        <!-- أقسام المتجر (روابط الصفحات الفرعية) -->
+        <!-- أقسام المتجر -->
         <a href="yalla_ludo_coins.html" class="menu-btn">💎 شحن كوينز يلا لودو</a>
         <a href="yalla_ludo_account.html" class="menu-btn">👤 شراء وبيع الحسابات</a>
         <a href="yalla_ludo_id.html" class="menu-btn">🆔 أيديهات مميزة</a>
@@ -119,6 +154,27 @@
             جميع الحقوق محفوظة © متجر الجنوبي 2026
         </div>
     </div>
+
+    <!-- الأيقونات الجانبية العائمة (خدمة العملاء + سجل الطلبات) -->
+    <div class="floating-icons">
+        <!-- زر خدمة العملاء (واتساب برقمك) -->
+        <a href="https://wa.me/9647800888534?text=مرحباً،%20أحتاج%20إلى%20مساعدة%20من%20خدمة%20العملاء" 
+           class="float-btn float-whatsapp" target="_blank" title="خدمة العملاء (واتساب)">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        
+        <!-- زر سجل الطلبات (تظهر الطلبات أو تنقله لصفحة سجل الطلبات) -->
+        <a href="#" onclick="showMyOrders()" class="float-btn float-orders" title="سجل الطلبات الواردة">
+            <i class="fa-solid fa-box-archive"></i>
+        </a>
+    </div>
+
+    <script>
+        // دالة عرض تفاصيل سجل الطلبات للزبون
+        function showMyOrders() {
+            alert("📦 سجل الطلبات:\nهنا يمكنك متابعة الطلبات التي قمت بإرسالها أو التواصل معنا لتأكيد حالة طلبك الحالي.");
+        }
+    </script>
 
 </body>
 </html>
