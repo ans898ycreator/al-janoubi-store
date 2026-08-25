@@ -3,260 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شحن كوينزات يلا لودو - متجر حمودي الجنوبي</title>
+    <title>شحن كوينز يلا لودو - متجر الجنوبي</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(20, 20, 30, 0.85)),
-                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
-            background-size: cover; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 20px;
-        }
-        header { text-align: center; margin-bottom: 25px; position: relative; width: 100%; max-width: 650px; }
-        .back-btn {
-            position: absolute; top: 0; right: 0; background: rgba(142, 68, 173, 0.3); border: 1px solid #9b59b6;
-            color: #e8daef; padding: 6px 14px; border-radius: 10px; text-decoration: none; font-size: 14px;
-        }
-        .form-container {
-            width: 100%; max-width: 650px; background: rgba(15, 15, 25, 0.9); border: 2px solid #d4af37; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-            margin-bottom: 30px;
-        }
-        .section-main-title { font-size: 18px; font-weight: bold; color: #f1c40f; margin-bottom: 15px; text-align: center; border-bottom: 2px solid #d4af37; padding-bottom: 8px; }
-        .section-title { font-size: 15px; font-weight: bold; color: #f39c12; margin-bottom: 10px; border-bottom: 1px dashed rgba(241,196,15,0.3); padding-bottom: 5px; }
-
-        /* عروض مرتبة واحد تحت الآخر (Column) */
-        .offers-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
-        .offer-card {
-            background: linear-gradient(135deg, #873232, #c0392b);
-            border: 2px solid #e74c3c;
-            border-radius: 12px;
-            padding: 12px 15px;
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f7f6;
             text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            padding: 20px;
         }
-        .offer-card label { cursor: pointer; display: block; font-size: 15px; font-weight: bold; color: #ffffff; }
-
-        .offer-card input[type="radio"] { display: none; }
-        .offer-card.selected {
-            background: linear-gradient(135deg, #7d6608, #b7950b);
-            border-color: #f1c40f;
-            box-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
-            transform: scale(1.01);
+        .container {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         }
-        .offer-card.selected label {
-            color: #ffffff;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
-        }
-
-        /* صندوق طرق الدفع والأرقام */
-        .payment-box { background: linear-gradient(135deg, #1b4f72, #2980b9); border-radius: 12px; padding: 15px; margin-bottom: 20px; }
-        .payment-options { display: flex; justify-content: space-around; margin-top: 10px; font-size: 14px; }
-        .pay-method { text-align: center; cursor: pointer; }
-        .pay-method input[type="radio"] { margin-left: 5px; accent-color: #f1c40f; cursor: pointer; }
-
-        .pay-number {
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: all 0.4s ease-in-out;
-            color: #f1c40f;
-            font-weight: bold;
-            font-size: 14px;
-            margin-top: 5px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 6px;
-            line-height: 1.5;
-        }
-        .pay-details input[id$="-pay"]:checked ~ .pay-details div { /* dynamic */ }
-
-        .input-group { margin-bottom: 15px; }
-        .input-group label { display: block; font-size: 14px; color: #dcdde1; margin-bottom: 6px; }
-
-        /* الإطار واللون الذهبي المتحرك المضيء للحقول */
-        @keyframes goldGlow {
-            0% { border-color: #d4af37; box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
-            50% { border-color: #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.8), inset 0 0 5px rgba(241, 196, 15, 0.3); }
-            100% { border-color: #d4af37; box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
-        }
-
-        .input-field {
+        input, select, textarea {
             width: 100%;
-            background: rgba(20, 20, 30, 0.95);
-            border: 2px solid #d4af37;
-            border-radius: 12px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
             padding: 12px;
-            color: #f1c40f;
-            outline: none;
-            font-size: 15px;
-            font-weight: bold;
-            animation: goldGlow 3s infinite ease-in-out;
-            transition: 0.3s;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        .input-field::placeholder { color: #8c8c9e; font-weight: normal; }
-        .input-field:focus {
-            background: rgba(30, 30, 45, 1);
-            box-shadow: 0 0 20px rgba(241, 196, 15, 1);
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
         }
-
-        /* إخفاء حقل رقم الصيد عند اختيار الماستركارد */
-        .balance-container {
-            transition: all 0.4s ease-in-out;
-            max-height: 100px;
-            overflow: hidden;
-            opacity: 1;
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
-        .balance-container.hidden {
-            max-height: 0;
-            opacity: 0;
-            margin-bottom: 0;
-            pointer-events: none;
+        .btn-telegram:hover {
+            background-color: #006699;
         }
-
-        .submit-section { display: flex; gap: 15px; margin-top: 20px; }
-        .submit-btn { flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; color: white; }
-        .btn-whatsapp { background-color: #27ae60; }
-        .btn-telegram { background-color: #2980b9; }
     </style>
 </head>
 <body>
-    <header>
-        <a href="/yalla-ludo" class="back-btn">⬅ للخلف</a>
-        <h1 style="color: #fff; text-shadow: 0 0 10px rgba(241,196,15,0.8); font-size: 24px;">شحن كوينزات يلا لودو</h1>
-    </header>
 
-    <!-- القسم الأول: الغسيل VIP -->
-    <div class="form-container">
-        <div class="section-main-title">✨ أولاً: عروض الغسيل VIP ✨</div>
-        <div class="section-title">اختر عرض الغسيل:</div>
+    <div class="container">
+        <h2>💎 شحن كوينز يلا لودو</h2>
+        <p>املأ التفاصيل أدناه واختار طريقة الإرسال المناسبة لك</p>
 
-        <div class="offers-list">
-            <div class="offer-card" onclick="selectOffer(this, 'wash1', 'wash-offer')">
-                <input type="radio" id="wash1" name="wash-offer"><label for="wash1">2,500,000 كوينز 🟡 = 10,000$</label>
-            </div>
-            <div class="offer-card" onclick="selectOffer(this, 'wash2', 'wash-offer')">
-                <input type="radio" id="wash2" name="wash-offer"><label for="wash2">5,000,000 كوينز 🟡 = 20,000$</label>
-            </div>
-            <div class="offer-card" onclick="selectOffer(this, 'wash3', 'wash-offer')">
-                <input type="radio" id="wash3" name="wash-offer"><label for="wash3">10,000,000 كوينز 🟡 = 40,000$</label>
-            </div>
-            <div class="offer-card" onclick="selectOffer(this, 'wash4', 'wash-offer')">
-                <input type="radio" id="wash4" name="wash-offer"><label for="wash4">17,000,000 كوينز 🟡 = 60,000$</label>
-            </div>
-        </div>
+        <!-- حقل آيدي اللاعب -->
+        <input type="text" id="player_id" placeholder="أدخل آيدي اللاعب (ID)">
 
-        <!-- طرق الدفع للغسيل (أسياسيل / ماستركارد) -->
-        <div class="payment-box">
-            <div style="font-weight: bold; margin-bottom: 5px; font-size: 14px;">اختر طريقة الدفع:</div>
-            <div class="payment-options">
-                <label class="pay-method"><input type="radio" name="wash_pay" onclick="toggleWashPay('asiacell')"> أسياسيل</label>
-                <label class="pay-method"><input type="radio" name="wash_pay" onclick="toggleWashPay('mastercard')"> ماستركارد</label>
-            </div>
-            <div class="pay-details" style="margin-top: 8px;">
-                <div id="wash-num-asiasell" class="pay-number" style="display:none;">رقم أسياسيل: 07739106111</div>
-                <div id="wash-num-mastercard" class="pay-number" style="display:none;">رقم الماستركارد: 3276376591<br>باسم: محمد حسين</div>
-            </div>
-        </div>
+        <!-- حقل اختيار الفئة / الرصيد -->
+        <select id="amount">
+            <option value="">اختر فئة الشحن</option>
+            <option value="10,000 كوينز">10,000 كوينز</option>
+            <option value="50,000 كوينز">50,000 كوينز</option>
+            <option value="100,000 كوينز">100,000 كوينز</option>
+            <option value="500,000 كوينز">500,000 كوينز</option>
+        </select>
 
-        <!-- حقل الأيدي فقط معرفة الحساب -->
-        <div class="input-group">
-            <label>أيدي الحساب (ID):</label>
-            <input type="text" class="input-field" placeholder="أدخل أيدي الحساب الخاص بك هنا">
-        </div>
+        <!-- حقل ملاحظات إضافية -->
+        <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
 
-        <!-- حقل رقم الصيد (يختفي عند الماستركارد) -->
-        <div class="input-group balance-container" id="wash-balance-box">
-            <label>رقم الصيد (رقم الهاتف المحوّل منه):</label>
-            <input type="text" class="input-field" placeholder="ضع رقم الرصيد هنا">
-        </div>
-
-        <div class="input-group">
-            <label>إرفاق صورة إيصال التحويل (اختياري):</label>
-            <input type="file" class="input-field" accept="image/*" style="padding: 8px; animation: none; color: white;">
-        </div>
-
-        <div class="submit-section">
-            <a href="https://wa.me/9647800888534" target="_blank" class="submit-btn btn-whatsapp">واتساب</a>
-            <a href="https://t.me/H_XG1" target="_blank" class="submit-btn btn-telegram">تيليجرام</a>
-        </div>
+        <!-- أزرار الإرسال (واتساب وتيليجرام) -->
+        <button class="btn-whatsapp" onclick="sendOrder('whatsapp')">إرسال عبر الواتساب 🟢</button>
+        <button class="btn-telegram" onclick="sendOrder('telegram')">إرسال عبر تيليجرام 🔵</button>
     </div>
 
-    <!-- القسم الثاني: شحن كوينزات داخل الحساب مع نقاط رويال -->
-    <div class="form-container">
-        <div class="section-main-title">✨ ثانياً: شحن كوينزات داخل الحساب مع نقاط رويال ✨</div>
-        <div class="section-title">اختر العرض:</div>
-
-        <div class="offers-list">
-            <div class="offer-card" onclick="selectOffer(this, 'royal1', 'royal-offer')">
-                <input type="radio" id="royal1" name="royal-offer"><label for="royal1">17,000,000 🟡 + 490 نقطة رويال 👑 = 90,000$</label>
-            </div>
-            <div class="offer-card" onclick="selectOffer(this, 'royal2', 'royal-offer')">
-                <input type="radio" id="royal2" name="royal-offer"><label for="royal2">34,000,000 🟡 + 980 نقطة رويال 👑 = 180,000$</label>
-            </div>
-        </div>
-
-        <!-- طرق الدفع (ماستركارد فقط) -->
-        <div class="payment-box" style="background: linear-gradient(135deg, #7d6608, #b7950b);">
-            <div style="font-weight: bold; margin-bottom: 5px; font-size: 14px;">طريقة الدفع المتاحة:</div>
-            <div style="font-size: 14px; font-weight: bold; color: #fff;">💳 ماستركارد حصراً</div>
-            <div style="margin-top: 5px; font-size: 13px; color: #f1c40f;">رقم الماستركارد: 3276376591 (باسم: محمد حسين)</div>
-        </div>
-
-        <!-- حقل الرقم أو الإيميل -->
-        <div class="input-group">
-            <label>الرقم أو الإيميل الخاص بالحساب:</label>
-            <input type="text" class="input-field" placeholder="أدخل البريد الإلكتروني أو رقم الهاتف">
-        </div>
-
-        <!-- حقل الرمز (كلمة المرور) -->
-        <div class="input-group">
-            <label>رمز الحساب (كلمة المرور):</label>
-            <input type="password" class="input-field" placeholder="أدخل كلمة المرور الخاصة بالحساب">
-        </div>
-
-        <div class="input-group">
-            <label>إرفاق صورة إيصال التحويل (اختياري):</label>
-            <input type="file" class="input-field" accept="image/*" style="padding: 8px; animation: none; color: white;">
-        </div>
-
-        <div class="submit-section">
-            <a href="https://wa.me/9647800888534" target="_blank" class="submit-btn btn-whatsapp">واتساب</a>
-            <a href="https://t.me/H_XG1" target="_blank" class="submit-btn btn-telegram">تيليجرام</a>
-        </div>
-    </div>
-
-    <!-- كود الجافاسكريبت للتحكم بالتحديد وطرق الدفع -->
     <script>
-        function selectOffer(cardElement, inputId, groupName) {
-            // إزالة التحديد من نفس مجموعة العروض فقط
-            cardElement.parentElement.querySelectorAll('.offer-card').forEach(card => {
-                card.classList.remove('selected');
-            });
-            cardElement.classList.add('selected');
-            document.getElementById(inputId).checked = true;
-        }
+        function sendOrder(platform) {
+            // 1. سحب البيانات من الحقول
+            let playerId = document.getElementById('player_id').value;
+            let amount = document.getElementById('amount').value;
+            let notes = document.getElementById('notes').value;
 
-        function toggleWashPay(method) {
-            const balanceBox = document.getElementById('wash-balance-box');
-            const asiaNum = document.getElementById('wash-num-asiasell');
-            const masterNum = document.getElementById('wash-num-mastercard');
+            // 2. التحقق من إدخال الحقول الأساسية
+            if (!playerId) {
+                alert("يرجى إدخال آيدي اللاعب أولاً!");
+                return;
+            }
+            if (!amount) {
+                alert("يرجى اختيار فئة الشحن!");
+                return;
+            }
 
-            if (method === 'asiacell') {
-                asiaNum.style.display = 'block';
-                asiaNum.style.maxHeight = '50px';
-                asiaNum.style.opacity = '1';
-                asiaNum.style.padding = '8px';
-                masterNum.style.display = 'none';
-                balanceBox.classList.remove('hidden'); // إظهار حقل رقم الصيد
-            } else if (method === 'mastercard') {
-                masterNum.style.display = 'block';
-                masterNum.style.maxHeight = '60px';
-                masterNum.style.opacity = '1';
-                masterNum.style.padding = '8px';
-                asiaNum.style.display = 'none';
-                balanceBox.classList.add('hidden');    // إخفاء حقل رقم الصيد للماستر
+            // 3. ترتيب نص الرسالة ليصلك جاهزاً ومنظماً
+            let message = `🛒 *طلب شحن كوينز جديد*:%0a` +
+                          `👤 *آيدي اللاعب*: ${playerId}%0a` +
+                          `💰 *الفئة المطلوبة*: ${amount}%0a` +
+                          `📝 *ملاحظات*: ${notes ? notes : 'لا توجد'}`;
+
+            // 4. التوجيه حسب المنصة المختارة
+            if (platform === 'whatsapp') {
+                // رقم الواتساب الخاص بك مع رمز العراق (964)
+                let phoneNo = "9647800888534";
+                let url = `https://wa.me/${phoneNo}?text=${message}`;
+                window.open(url, '_blank');
+            } 
+            else if (platform === 'telegram') {
+                // معرف تيليجرام الخاص بك
+                let tgUsername = "H_XG1";
+                let url = `https://t.me/${tgUsername}?text=${message}`;
+                window.open(url, '_blank');
             }
         }
     </script>
+
 </body>
 </html>
