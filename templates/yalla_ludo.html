@@ -3,128 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عروض يلا لودو - متجر حمودي الجنوبي</title>
+    <title>خدمات يلا لودو العامة - متجر الجنوبي</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(20, 20, 30, 0.85)),
-                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
-            background-size: cover; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 20px;
+            font-family: Tahoma, sans-serif;
+            background-color: #f4f7f6;
+            text-align: center;
+            padding: 20px;
         }
-        header { text-align: center; margin-bottom: 25px; position: relative; width: 100%; max-width: 700px; }
-        .back-btn {
-            position: absolute; top: 0; right: 0; background: rgba(142, 68, 173, 0.3); border: 1px solid #9b59b6;
-            color: #e8daef; padding: 6px 14px; border-radius: 10px; text-decoration: none; font-size: 14px;
+        .container {
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
         }
-        .main-title { font-size: 26px; font-weight: bold; color: #f1c40f; text-shadow: 0 0 10px rgba(241,196,15,0.6); margin-bottom: 5px; }
-        .sub-title { font-size: 14px; color: #dcdde1; }
-
-        /* حاوية الأزرار */
-        .services-container {
-            width: 100%; max-width: 700px; display: flex; flex-direction: column; gap: 15px;
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
-
-        /* تنسيق بطاقة الخدمة */
-        .service-card {
-            background: rgba(15, 15, 25, 0.9);
-            border: 2px solid #d4af37;
-            border-radius: 16px;
-            padding: 18px 20px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            text-decoration: none;
+        .btn-whatsapp {
+            background-color: #25d366;
             color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
-
-        .service-card:hover {
-            border-color: #f1c40f;
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
-            background: rgba(25, 25, 40, 0.95);
+        .btn-whatsapp:hover {
+            background-color: #1ebe5d;
         }
-
-        /* أيقونة الخدمة داخل المربع الصغير */
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: rgba(212, 175, 55, 0.15);
-            border: 1px solid #d4af37;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            flex-shrink: 0;
+        .btn-telegram {
+            background-color: #0088cc;
+            color: white;
+            padding: 12px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
         }
-
-        .service-info h2 {
-            font-size: 18px;
-            color: #f1c40f;
-            margin-bottom: 5px;
-        }
-
-        .service-info p {
-            font-size: 13px;
-            color: #b2bec3;
+        .btn-telegram:hover {
+            background-color: #006699;
         }
     </style>
 </head>
 <body>
-    <header>
-        <a href="/" class="back-btn">⬅ الرئيسية</a>
-        <h1 class="main-title">عروض يلا لودو</h1>
-        <p class="sub-title">اختر الخدمة المناسبة لشحن حسابك برعاية حمودي الجنوبي</p>
-    </header>
 
-    <div class="services-container">
-        <!-- الخيار الأول: شحن جواهر بالأيدي -->
-        <a href="/yalla-ludo-id" class="service-card">
-            <div class="service-icon">💎</div>
-            <div class="service-info">
-                <h2>شحن جواهر يلا لودو (الأيدي)</h2>
-                <p>شحن سريع وآمن باستخدام رقم الـ ID فقط</p>
-            </div>
-        </a>
+    <div class="container">
+        <h2>🎲 خدمات وقسم يلا لودو العام</h2>
+        <p>املأ تفاصيل طلبك العام أو التصاميم والبنرات المطلوبة</p>
 
-        <!-- الخيار الثاني: شحن جواهر داخل الحساب -->
-        <a href="/yalla-ludo-account" class="service-card">
-            <div class="service-icon">🔐</div>
-            <div class="service-info">
-                <h2>شحن جواهر يلا لودو (داخل الحساب)</h2>
-                <p>شحن مباشر ومضمون داخل حسابك الشخصي</p>
-            </div>
-        </a>
+        <!-- حقل آيدي اللاعب أو المعرف -->
+        <input type="text" id="player_id" placeholder="آيدي اللاعب أو معرف الغرفة (Room ID)">
 
-        <!-- الخيار الثالث: شحن كوينزات -->
-        <a href="/yalla-ludo-coins" class="service-card">
-            <div class="service-icon">🏛️</div>
-            <div class="service-info">
-                <h2>شحن كوينزات يلا لودو</h2>
-                <p>أفضل أسعار الكوينزات للغرف واللعب اليومي</p>
-            </div>
-        </a>
+        <!-- حقل نوع الخدمة العامة -->
+        <select id="amount">
+            <option value="">اختر الخدمة المطلوبة</option>
+            <option value="تصميم بنر أو واجهة روم">تصميم بنر أو واجهة روم</option>
+            <option value="شحن جواهر وعملات إضافية">شحن جواهر وعملات إضافية</option>
+            <option value="استفسار أو طلب خدمة عامة">استفسار أو طلب خدمة عامة</option>
+        </select>
 
-        <!-- الخيار الرابع: تفعيل VIP -->
-        <a href="/yalla-ludo-vip" class="service-card">
-            <div class="service-icon">👑</div>
-            <div class="service-info">
-                <h2>تفعيل VIP يلا لودو (الأيدي)</h2>
-                <p>ترقية الفئات المميزة (فارس، بارون) بسرعة فائقة</p>
-            </div>
-        </a>
+        <!-- حقل ملاحظات إضافية -->
+        <textarea id="notes" placeholder="ملاحظات إضافية أو تفاصيل الطلب (اختياري)"></textarea>
 
-        <!-- الخيار الخامس: تأمين رويال يلا لودو (الجديد) -->
-        <a href="/royal" class="service-card">
-            <div class="service-icon">🛡️</div>
-            <div class="service-info">
-                <h2>تأمين رويال يلا لودو</h2>
-                <p>حماية وتأمين حسابات رويال يلا لودو بموثوقية عالية</p>
-            </div>
-        </a>
+        <!-- أزرار الإرسال المباشر -->
+        <button class="btn-whatsapp" onclick="sendOrder('whatsapp')">إرسال الطلب عبر الواتساب 🟢</button>
+        <button class="btn-telegram" onclick="sendOrder('telegram')">إرسال الطلب عبر تيليجرام 🔵</button>
     </div>
+
+    <script>
+        function sendOrder(platform) {
+            let playerId = document.getElementById('player_id').value;
+            let amount = document.getElementById('amount').value;
+            let notes = document.getElementById('notes').value;
+
+            if (!playerId) {
+                alert("يرجى إدخال الآيدي أو معرف الغرفة أولاً!");
+                return;
+            }
+
+            let message = `🛒 *طلب قسم يلا لودو العام - متجر الجنوبي*%0a` +
+                          `👤 *الآيدي / الروم*: ${playerId}%0a` +
+                          `📌 *نوع الخدمة*: ${amount ? amount : 'غير محدد'}%0a` +
+                          `📝 *ملاحظات*: ${notes ? notes : 'لا توجد'}`;
+
+            if (platform === 'whatsapp') {
+                let phoneNo = "9647800888534";
+                window.open(`https://wa.me/${phoneNo}?text=${message}`, '_blank');
+            } else if (platform === 'telegram') {
+                let tgUsername = "H_XG1";
+                window.open(`https://t.me/${tgUsername}?text=${message}`, '_blank');
+            }
+        }
+    </script>
+
 </body>
 </html>
