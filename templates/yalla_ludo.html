@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عروض يلا لودو - متجر حمودي الجنوبي</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(20, 20, 30, 0.85)),
+                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 20px;
+        }
+        header { text-align: center; margin-bottom: 25px; position: relative; width: 100%; max-width: 700px; }
+        .back-btn {
+            position: absolute; top: 0; right: 0; background: rgba(142, 68, 173, 0.3); border: 1px solid #9b59b6;
+            color: #e8daef; padding: 6px 14px; border-radius: 10px; text-decoration: none; font-size: 14px;
+        }
+        .main-title { font-size: 26px; font-weight: bold; color: #f1c40f; text-shadow: 0 0 10px rgba(241,196,15,0.6); margin-bottom: 5px; }
+        .sub-title { font-size: 14px; color: #dcdde1; }
+
+        /* حاوية الأزرار */
+        .services-container {
+            width: 100%; max-width: 700px; display: flex; flex-direction: column; gap: 15px;
+        }
+
+        /* تنسيق بطاقة الخدمة */
+        .service-card {
+            background: rgba(15, 15, 25, 0.9);
+            border: 2px solid #d4af37;
+            border-radius: 16px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+
+        .service-card:hover {
+            border-color: #f1c40f;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(241, 196, 15, 0.5);
+            background: rgba(25, 25, 40, 0.95);
+        }
+
+        /* أيقونة الخدمة داخل المربع الصغير */
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid #d4af37;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+
+        .service-info h2 {
+            font-size: 18px;
+            color: #f1c40f;
+            margin-bottom: 5px;
+        }
+
+        .service-info p {
+            font-size: 13px;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="back-btn">⬅ الرئيسية</a>
+        <h1 class="main-title">عروض يلا لودو</h1>
+        <p class="sub-title">اختر الخدمة المناسبة لشحن حسابك برعاية حمودي الجنوبي</p>
+    </header>
+
+    <div class="services-container">
+        <!-- الخيار الأول: شحن جواهر بالأيدي -->
+        <a href="/yalla-ludo-id" class="service-card">
+            <div class="service-icon">💎</div>
+            <div class="service-info">
+                <h2>شحن جواهر يلا لودو (الأيدي)</h2>
+                <p>شحن سريع وآمن باستخدام رقم الـ ID فقط</p>
+            </div>
+        </a>
+
+        <!-- الخيار الثاني: شحن جواهر داخل الحساب -->
+        <a href="/yalla-ludo-account" class="service-card">
+            <div class="service-icon">🔐</div>
+            <div class="service-info">
+                <h2>شحن جواهر يلا لودو (داخل الحساب)</h2>
+                <p>شحن مباشر ومضمون داخل حسابك الشخصي</p>
+            </div>
+        </a>
+
+        <!-- الخيار الثالث: شحن كوينزات -->
+        <a href="/yalla-ludo-coins" class="service-card">
+            <div class="service-icon">🏛️</div>
+            <div class="service-info">
+                <h2>شحن كوينزات يلا لودو</h2>
+                <p>أفضل أسعار الكوينزات للغرف واللعب اليومي</p>
+            </div>
+        </a>
+
+        <!-- الخيار الرابع: تفعيل VIP -->
+        <a href="/yalla-ludo-vip" class="service-card">
+            <div class="service-icon">👑</div>
+            <div class="service-info">
+                <h2>تفعيل VIP يلا لودو (الأيدي)</h2>
+                <p>ترقية الفئات المميزة (فارس، بارون) بسرعة فائقة</p>
+            </div>
+        </a>
+
+        <!-- الخيار الخامس: تأمين رويال يلا لودو (الجديد) -->
+        <a href="/royal" class="service-card">
+            <div class="service-icon">🛡️</div>
+            <div class="service-info">
+                <h2>تأمين رويال يلا لودو</h2>
+                <p>حماية وتأمين حسابات رويال يلا لودو بموثوقية عالية</p>
+            </div>
+        </a>
+    </div>
+</body>
+</html>

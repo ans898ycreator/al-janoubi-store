@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شحن عبر الأيدي (ID) - متجر حمودي الجنوبي</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(10, 10, 15, 0.75), rgba(20, 20, 30, 0.85)),
+                        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+            background-size: cover; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 20px;
+        }
+        header { text-align: center; margin-bottom: 25px; position: relative; width: 100%; max-width: 650px; }
+        .back-btn {
+            position: absolute; top: 0; right: 0; background: rgba(142, 68, 173, 0.3); border: 1px solid #9b59b6;
+            color: #e8daef; padding: 6px 14px; border-radius: 10px; text-decoration: none; font-size: 14px;
+        }
+        .form-container {
+            width: 100%; max-width: 650px; background: rgba(15, 15, 25, 0.9); border: 2px solid #d4af37; border-radius: 20px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+        }
+        .section-title { font-size: 16px; font-weight: bold; color: #f1c40f; margin-bottom: 12px; border-bottom: 1px dashed rgba(212,175,55,0.3); padding-bottom: 5px; }
+
+        /* عروض الماسات مع أيقونة الماس والتحديد المتحرك */
+        .offers-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+        .offer-card {
+            background: linear-gradient(135deg, #873232, #c0392b);
+            border: 2px solid #e74c3c;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .offer-card label { cursor: pointer; display: block; font-size: 15px; font-weight: bold; color: #ffffff; }
+
+        .offer-card input[type="radio"] { display: none; }
+        .offer-card.selected {
+            background: linear-gradient(135deg, #7d6608, #b7950b);
+            border-color: #f1c40f;
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.6);
+            transform: scale(1.02);
+        }
+        .offer-card.selected label {
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        /* صندوق طرق الدفع والأرقام */
+        .payment-box { background: linear-gradient(135deg, #1b4f72, #2980b9); border-radius: 12px; padding: 15px; margin-bottom: 20px; }
+        .payment-options { display: flex; justify-content: space-around; margin-top: 10px; font-size: 14px; }
+        .pay-method { text-align: center; cursor: pointer; }
+        .pay-method input[type="radio"] { margin-left: 5px; accent-color: #f1c40f; cursor: pointer; }
+
+        .pay-number {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s ease-in-out;
+            color: #f1c40f;
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 5px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            line-height: 1.5;
+        }
+        #asiacell-pay:checked ~ .pay-details #num-asiasell,
+        #atheer-pay:checked ~ .pay-details #num-atheer {
+            max-height: 50px;
+            opacity: 1;
+            padding: 8px;
+        }
+
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 14px; color: #dcdde1; margin-bottom: 6px; }
+
+        /* الحقول المميزة بالإطار واللون الذهبي المتحرك المضيء */
+        @keyframes goldGlow {
+            0% { border-color: #d4af37; box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
+            50% { border-color: #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.8), inset 0 0 5px rgba(241, 196, 15, 0.3); }
+            100% { border-color: #d4af37; box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
+        }
+
+        .input-field {
+            width: 100%;
+            background: rgba(20, 20, 30, 0.95);
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            padding: 12px;
+            color: #f1c40f;
+            outline: none;
+            font-size: 15px;
+            font-weight: bold;
+            animation: goldGlow 3s infinite ease-in-out;
+            transition: 0.3s;
+        }
+        .input-field::placeholder { color: #8c8c9e; font-weight: normal; }
+        .input-field:focus {
+            background: rgba(30, 30, 45, 1);
+            box-shadow: 0 0 20px rgba(241, 196, 15, 1);
+        }
+
+        .submit-section { display: flex; gap: 15px; margin-top: 25px; }
+        .submit-btn { flex: 1; padding: 12px; border-radius: 12px; text-decoration: none; font-size: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; color: white; }
+        .btn-whatsapp { background-color: #27ae60; }
+        .btn-telegram { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/yalla-ludo" class="back-btn">⬅ للخلف</a>
+        <h1 style="color: #fff; text-shadow: 0 0 10px rgba(241,196,15,0.8); font-size: 24px;">شحن جواهر عبر الأيدي (ID)</h1>
+    </header>
+
+    <div class="form-container">
+        <div class="section-title">اختر عرض الشحن بالأيدي:</div>
+
+        <!-- العروض مع أيقونة الماس وتحديد الصندوق -->
+        <div class="offers-grid">
+            <div class="offer-card" onclick="selectOffer(this, 'id1')">
+                <input type="radio" id="id1" name="offer"><label for="id1">810 💎 = 5,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id2')">
+                <input type="radio" id="id2" name="offer"><label for="id2">2,280 💎 = 10,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id3')">
+                <input type="radio" id="id3" name="offer"><label for="id3">5,080 💎 = 15,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id4')">
+                <input type="radio" id="id4" name="offer"><label for="id4">10,160 💎 = 30,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id5')">
+                <input type="radio" id="id5" name="offer"><label for="id5">12,750 💎 = 40,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id6')">
+                <input type="radio" id="id6" name="offer"><label for="id6">27,200 💎 = 80,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id7')">
+                <input type="radio" id="id7" name="offer"><label for="id7">54,900 💎 = 155,000$</label>
+            </div>
+            <div class="offer-card" onclick="selectOffer(this, 'id8')">
+                <input type="radio" id="id8" name="offer"><label for="id8">164,800 💎 = 460,000$</label>
+            </div>
+        </div>
+
+        <!-- طرق الدفع (أسياسيل / أثير) -->
+        <div class="payment-box">
+            <div style="font-weight: bold; margin-bottom: 5px; font-size: 14px;">اختر طريقة الدفع (انقر على الخيار لإظهار الرقم):</div>
+
+            <input type="radio" id="asiacell-pay" name="payment_method" style="display:none;">
+            <input type="radio" id="atheer-pay" name="payment_method" style="display:none;">
+
+            <div class="payment-options">
+                <label for="asiacell-pay" class="pay-method">
+                    <input type="radio" name="pay_select" onclick="document.getElementById('asiacell-pay').checked=true;"> أسياسيل
+                </label>
+                <label for="atheer-pay" class="pay-method">
+                    <input type="radio" name="pay_select" onclick="document.getElementById('atheer-pay').checked=true;"> أثير
+                </label>
+            </div>
+
+            <div class="pay-details">
+                <div id="num-asiasell" class="pay-number">رقم أسياسيل: 07739106111</div>
+                <div id="num-atheer" class="pay-number">رقم أثير: 07800888534</div>
+            </div>
+        </div>
+
+        <!-- حقل أيدي الحساب بإطار ذهبي متحرك -->
+        <div class="input-group">
+            <label>أيدي الحساب (ID):</label>
+            <input type="text" class="input-field" placeholder="أدخل أيدي الحساب الخاص بك هنا">
+        </div>
+
+        <!-- حقل رقم الصيد مع الملاحظة المطلوبة -->
+        <div class="input-group">
+            <label>رقم الصيد (رقم الهاتف المحوّل منه):</label>
+            <input type="text" class="input-field" placeholder="ضع رقم الرصيد هنا">
+        </div>
+
+        <div class="input-group">
+            <label>إرفاق صورة إيصال التحويل (اختياري):</label>
+            <input type="file" class="input-field" accept="image/*" style="padding: 8px; animation: none; color: white;">
+        </div>
+
+        <div class="submit-section">
+            <a href="https://wa.me/9647800888534" target="_blank" class="submit-btn btn-whatsapp">واتساب</a>
+            <a href="https://t.me/H_XG1" target="_blank" class="submit-btn btn-telegram">تيليجرام</a>
+        </div>
+    </div>
+
+    <!-- كود جافاسكريبت لتحديد العرض المختار -->
+    <script>
+        function selectOffer(cardElement, inputId) {
+            document.querySelectorAll('.offer-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            cardElement.classList.add('selected');
+            document.getElementById(inputId).checked = true;
+        }
+    </script>
+</body>
+</html>
